@@ -1,25 +1,24 @@
 # feeds.yaml : add/remove based on your prefs
 
-kev_catalog: "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 feeds:
-  #- name: "The Record"
-  #  url: "https://therecord.media/feed/"
-  #  tags: [cybercrime]
+  - name: "The Record"
+    url: "https://therecord.media/feed/"
+    tags: [general]
   - name: "BleepingComputer"
     url: "https://www.bleepingcomputer.com/feed/"
-  #  tags: [general, ransomware]
-  #- name: "Krebs on Security"
-  #  url: "https://krebsonsecurity.com/feed/"
-  #  tags: [general]
-  #- name: "Dark Reading"
-  #  url: "https://www.darkreading.com/rss.xml"
-  #  tags: [general]
+    tags: [general, ransomware]
+  - name: "Krebs on Security"
+    url: "https://krebsonsecurity.com/feed/"
+    tags: [general]
+  - name: "Dark Reading"
+    url: "https://www.darkreading.com/rss.xml"
+    tags: [general]
   - name: "CISA Advisories"
     url: "https://www.cisa.gov/news-events/cybersecurity-advisories/rss.xml"
-  #  tags: [advisory, cve-exploit]
-  #- name: "The Hacker News"
-  #  url: "https://feeds.feedburner.com/TheHackersNews"
-  #  tags: [general]
+    tags: [advisory, cve-exploit]
+  - name: "The Hacker News"
+    url: "https://feeds.feedburner.com/TheHackersNews"
+    tags: [general]
 
   # free API-style feeds for later
   # - github advisory database (GraphQL, needs token)
