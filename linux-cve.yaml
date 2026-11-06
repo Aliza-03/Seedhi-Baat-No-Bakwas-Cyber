@@ -1,0 +1,36 @@
+# profiles/linux-cve.yaml — "Linux CVE exploit news"
+# Gates are AND-ed regex groups: item must match >=1 pattern in EVERY group.
+require_all:
+  - ["cve-\\d{4}|cve\\b"]
+  - ["linux", "kernel", "ubuntu", "debian", "rhel", "fedora", "android",
+     "openwrt", "busybox", "systemd", "glibc"]
+
+# Points for exploit-relevant vocabulary. Tune freely.
+scoring:
+  exploit: 4
+  "privilege escalation": 4
+  "remote code execution": 4
+  rce: 4
+  "proof of concept": 3
+  poc: 3
+  "actively exploited": 5
+  "in the wild": 5
+  "zero-day": 3
+  "zero day": 3
+  "out-of-bounds": 2
+  "use-after-free": 2
+  heap: 1
+  root: 2
+  patch: 1
+  "security update": 1
+  cve: 1
+
+# Anti-patterns: cross-platform advisories that merely *mention* Linux.
+negative:
+  windows: -3
+  macos: -3
+  ios: -2
+  "microsoft": -2
+
+min_score: 3
+kev_bonus: 2   # KEV-listed
