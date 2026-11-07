@@ -1,9 +1,21 @@
 # profiles/linux-cve.yaml — "Linux CVE exploit news"
 # Gates are AND-ed regex groups: item must match >=1 pattern in EVERY group.
-require_all:
-  - ["cve-\\d{4}|cve\\b"]
-  - ["linux", "kernel", "ubuntu", "debian", "rhel", "fedora", "android",
-     "openwrt", "busybox", "systemd", "glibc"]
+require_any:
+  - '\blinux\b'
+  - 'kernel'
+  - 'debian|ubuntu|fedora|rhel|centos|arch|suse'   # distro names
+  - 'cve-\d{4}|cve\b'
+
+
+
+reject_if:
+  - '\bandroid\b'
+  - '\bios\b'
+  - '\bwindows\b'
+  - '\bmacos\b'
+
+ 
+
 
 # Points for exploit-relevant vocabulary. Tune freely.
 scoring:
